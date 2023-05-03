@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import {
   View,
+  Image,
   Text,
   StyleSheet,
   TouchableOpacity,
@@ -51,7 +52,7 @@ export default function IntroductiontoJava() {
 
   return (
     <View style={containerStyle}>
-      <ScrollView
+      <ScrollView style={styles.scrollView}
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
         overScrollMode="never"
@@ -127,10 +128,11 @@ export default function IntroductiontoJava() {
           a file, you shoud add .java at the end of the filename which contains
           the classname of your code like MyFirstProgram.java {"\n"}
         </Text>
-        <Text style={textStyle}>This is an example of a java program</Text>
-
-        {/* Insert sample image here */}
-
+        <Text style={textStyle}>This is an example of a java program:</Text>
+        <Image
+          source={require("../../assets/codesnap/program.png")}
+          style={styles.imageStyle}
+        />
         <Text style={headerStyle}>The main() method</Text>
         <Text style={textStyle}>
           This is required in every Java program that you will create. {"\n"}
@@ -146,26 +148,48 @@ export default function IntroductiontoJava() {
           text on the screen: {"\n"}
         </Text>
         <Text style={textStyle}>
-          This is an example of using System.out.println
+          This is an example of using System.out.println: {"\n"}
         </Text>
-
-        {/* Insert sample image here */}
-
+        <Image
+          source={require("../../assets/codesnap/printsample.png")}
+          style={styles.imageStyle}
+        />
+        <Text style={textStyle}></Text>
         <Text style={headerStyle}>Comments</Text>
         <Text style={textStyle}>
           Comments can be used as reminders for the programmer and it can also
           be used to explain the code so it can be more readable.
         </Text>
         <Text style={textStyle}>
-          Single line comments use double slash (//)
+          Single line comments use double slash (//) {"\n"}
         </Text>
-        <Text style={headerStyle}>//this is a single line comment</Text>
-        {/* Insert sample image here */}
+
+        <Image
+          source={require("../../assets/codesnap/singleline.png")}
+          style={styles.imageStyle}
+        />
+        <Text style={textStyle}></Text>
         <Text style={textStyle}>
           Another example is putting the single line comment at the end of line
-          of a code:
+          of a code: {"\n"}
         </Text>
-        {/* Insert sample image here */}
+        <Image
+          source={require("../../assets/codesnap/singlelineend.png")}
+          style={styles.imageStyle}
+        />
+        <Text style={textStyle}></Text>
+        <Text style={textStyle}>
+          Multi-line comments start with /* then ends with */
+        </Text>
+        <Text style={textStyle}>
+          This example shows how to use the multi-line comment
+        </Text>
+        <Text style={textStyle}></Text>
+        <Image
+          source={require("../../assets/codesnap/multi.png")}
+          style={styles.imageStyle}
+        />
+        <Text style={textStyle}></Text>
       </ScrollView>
     </View>
   );
@@ -192,5 +216,13 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 10,
+  },
+  imageStyle: {
+    width: 420,
+    height: 150,
+  },
+  scrollView: {
+    flex: 0,
+    width: '100%',
   },
 });

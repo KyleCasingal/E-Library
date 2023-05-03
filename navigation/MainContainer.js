@@ -4,13 +4,14 @@ import { NavigationContainer } from "@react-navigation/native";
 import HomeScreen from "./screens/HomeScreen";
 import AboutScreen from "./screens/AboutScreen";
 import IntroductiontoJava from "./screens/Introduction to Java";
-import Topic2 from "./screens/Topic 2";
-import Topic3 from "./screens/Topic 3";
+import JavaInput from "./screens/Java Input";
+
 import Topic4 from "./screens/Topic 4";
 import Topic5 from "./screens/Topic 5";
 import { Ionicons } from "@expo/vector-icons";
 import { AppContextProvider } from "./screens/AppContext";
 import { AppContext } from "./screens/AppContext";
+import IfandElseStatements from "./screens/If and Else Statements";
 const Stack = createStackNavigator();
 
 function HomeStack({ navigation }) {
@@ -55,8 +56,8 @@ function HomeStack({ navigation }) {
         }}
       />
       <Stack.Screen name="Introduction to Java" component={IntroductiontoJava} />
-      <Stack.Screen name="Topic 2" component={Topic2} />
-      <Stack.Screen name="Topic 3" component={Topic3} />
+      <Stack.Screen name="Java Input" component={JavaInput} />
+      <Stack.Screen name="If and Else Statements" component={IfandElseStatements} />
       <Stack.Screen name="Topic 4" component={Topic4} />
       <Stack.Screen name="Topic 5" component={Topic5} />
       <Stack.Screen name="About" component={AboutScreen} />

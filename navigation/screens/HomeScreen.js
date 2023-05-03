@@ -23,10 +23,9 @@ export default function HomeScreen({ navigation }) {
       screen: "Introduction to Java",
       color: "#71eaf5",
     },
-    { id: "2", title: "Java Input", screen: "Topic 2", color: "#ff7f50" },
-    { id: "3", title: "Topic 3", screen: "Topic 3", color: "#98fb98" },
-    { id: "4", title: "Topic 4", screen: "Topic 4", color: "#dda0dd" },
-    { id: "5", title: "Topic 5", screen: "Topic 5", color: "#87cefa" },
+    { id: "2", title: "Java Input", screen: "Java Input", color: "#ff7f50" },
+    { id: "3", title: "If and Else Statements", screen: "If and Else Statements", color: "#98fb98" },
+   
   ];
 
   const renderItem = ({ item }) => (

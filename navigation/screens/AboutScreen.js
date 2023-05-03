@@ -56,15 +56,10 @@ export default function AboutScreen() {
         overScrollMode="never"
       >
         <Text style={textStyle}>
-          Java is a programming language and computing platform first released
-          by Sun Microsystems in 1995. It has evolved from humble beginnings to
-          power a large share of today’s digital world, by providing the
-          reliable platform upon which many services and applications are built.
-          New, innovative products and digital services designed for the future
-          continue to rely on Java, as well. {"\n"}
+          This application is made under the requirement of an output in our research, we thank the respondents for our research in testing out our app and we accept suggestions on the questionnaire that will be given to the respondents.
         </Text>
 
-        <Text style={textStyle}>This is a sample sentence</Text>
+        
       </ScrollView>
     </View>
   );
@@ -78,9 +73,10 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   text: {
-    fontSize: 20,
-
+    fontSize: 25,
+    justifyContent: "center",
     textAlign: "justify",
+    alignItems: "center",
     marginVertical: 0,
   },
   toggleContainer: {
