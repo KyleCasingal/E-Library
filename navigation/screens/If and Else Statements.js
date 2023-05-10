@@ -61,7 +61,7 @@ export default function IfandElseStatements() {
         <Text style={headerStyle}>Introduction</Text>
         <Text style={textStyle}>
           Using the if and else statements is one of the most important things
-          to learn in java since it allows to execute codes baased on different
+          to learn in java since it allows to execute codes based on different
           conditions {"\n"}{" "}
         </Text>
         <Text style={headerStyle}>If Statements</Text>

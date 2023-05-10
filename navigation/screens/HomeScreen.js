@@ -1,19 +1,21 @@
 import React, { useContext, useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View, FlatList } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  FlatList,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { AppContext } from "./AppContext";
 
 export default function HomeScreen({ navigation }) {
   const { isDarkMode, toggleDarkMode } = useContext(AppContext);
-  const [toggleIcon, setToggleIcon] = useState(
-    isDarkMode ? "sunny" : "moon"
-  );
+  const [toggleIcon, setToggleIcon] = useState(isDarkMode ? "sunny" : "moon");
 
   const handleToggle = () => {
     toggleDarkMode();
-    setToggleIcon((prevIcon) =>
-      prevIcon === "moon" ? "sunny" : "moon"
-    );
+    setToggleIcon((prevIcon) => (prevIcon === "moon" ? "sunny" : "moon"));
   };
 
   const topics = [
@@ -24,8 +26,19 @@ export default function HomeScreen({ navigation }) {
       color: "#71eaf5",
     },
     { id: "2", title: "Java Input", screen: "Java Input", color: "#ff7f50" },
-    { id: "3", title: "If and Else Statements", screen: "If and Else Statements", color: "#98fb98" },
-   
+    {
+      id: "3",
+      title: "If and Else Statements",
+      screen: "If and Else Statements",
+      color: "#98fb98",
+    },
+    {
+      id: "4",
+      title: "Switch Statement",
+      screen: "Switch Statements",
+      color: "#ffd11a",
+    },
+    { id: "5", title: "Looping", screen: "Looping", color: "#ff66cc", },
   ];
 
   const renderItem = ({ item }) => (
@@ -51,7 +64,7 @@ export default function HomeScreen({ navigation }) {
     >
       <View style={styles.header}>
         <Text style={[styles.heading, { color: isDarkMode ? "#fff" : "#000" }]}>
-          Java Programming
+          Java
         </Text>
       </View>
       <TouchableOpacity style={styles.toggle} onPress={handleToggle}>
@@ -68,6 +81,28 @@ export default function HomeScreen({ navigation }) {
         showsVerticalScrollIndicator={false}
         overScrollMode="never"
       />
+      <View style={styles.bottomArrows}>
+        <TouchableOpacity
+          style={[styles.arrowButton, { bottom: 0, left: 20 }]}
+          onPress={() => navigation.navigate("Python")}
+        >
+          <Ionicons
+            name="arrow-back"
+            size={50}
+            color={isDarkMode ? "#fff" : "#000"}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.arrowButton, { bottom: 0, right: 20 }]}
+          onPress={() => navigation.navigate("Java Script")}
+        >
+          <Ionicons
+            name="arrow-forward"
+            size={50}
+            color={isDarkMode ? "#fff" : "#000"}
+          />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -107,4 +142,32 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 10,
   },
-})
+  bottomArrows: {
+    position: "absolute",
+    top: 0,
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+  },
+  arrow: {
+    position: "absolute",
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: "rgba(255, 255, 255, 0.5)",
+    justifyContent: "center",
+    alignItems: "center",
+    top: 0,
+  },
+  leftArrow: {
+    left: 20,
+  },
+  rightArrow: {
+    right: 20,
+  },
+  arrowIcon: {
+    fontSize: 30,
+  },
+});

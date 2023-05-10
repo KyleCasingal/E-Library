@@ -5,6 +5,8 @@ import {
   StyleSheet,
   TouchableOpacity,
   ScrollView,
+  Linking,
+  Image,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
@@ -47,7 +49,7 @@ export default function AboutScreen() {
   const textStyle = [styles.text, { color: isDarkMode ? "#fff" : "#000" }];
 
   const iconColor = isDarkMode ? "#fff" : "#000";
-
+  const url = 'https://docs.google.com/forms/d/e/1FAIpQLSeLXlEQ2_DJm6Zjpl6Y_wNwX35epsu8wECDW3ghonmyHLIbBg/viewform?usp=pp_url;'
   return (
     <View style={containerStyle}>
       <ScrollView
@@ -56,10 +58,41 @@ export default function AboutScreen() {
         overScrollMode="never"
       >
         <Text style={textStyle}>
-          This application is made under the requirement of an output in our research, we thank the respondents for our research in testing out our app and we accept suggestions on the questionnaire that will be given to the respondents.
+          This application is made under the requirement of an output in our
+          research, we thank the respondents for our research in testing out our
+          app and we accept suggestions on the questionnaire. To access the
+          questionnaire, please click or double-click the icon below.
         </Text>
-
-        
+        <Text style={textStyle}></Text>
+        <Text style={textStyle}></Text>
+        <Text style={textStyle}></Text>
+        <Text style={textStyle}></Text>
+        <Text style={textStyle}></Text>
+        <Text style={textStyle}></Text>
+        <Text style={textStyle}></Text>
+        <Text style={textStyle}></Text>
+        <Text style={textStyle}></Text>
+        <Text style={textStyle}></Text>
+        <Text style={textStyle}></Text>
+        <Text style={textStyle}></Text>
+        <Text style={textStyle}></Text>
+      
+       
+        <Text style={textStyle}></Text>
+        <TouchableOpacity onPress={() => Linking.openURL(url)}>
+          <Image
+            source={require("../../assets/codesnap/glogo.png")}
+            style={{
+              width: 160,
+              height: 200,
+              justifyContent: "center",
+              position: "absolute",
+              bottom: 100,
+              alignItems: "center",
+              alignSelf: "center",
+            }}
+          />
+        </TouchableOpacity>
       </ScrollView>
     </View>
   );

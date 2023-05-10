@@ -52,12 +52,20 @@ export default function IntroductiontoJava() {
 
   return (
     <View style={containerStyle}>
-      <ScrollView style={styles.scrollView}
+      <ScrollView
+        style={styles.scrollView}
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
         overScrollMode="never"
       >
         <Text style={headerStyle}>What is Java?</Text>
+        <Image
+          source={require("../../assets/codesnap/Javalogo.jpg")}
+          style={{ width: 360, height: 250 }}
+        />
+        <Text style={textStyle}>
+          Source: https://www.developer.com/java/java-comparison-operators/ {"\n"}
+        </Text>
         <Text style={textStyle}>
           Java is a programming language that was designed by James Gosling. It
           was made in the early 1990's, it was developed to be a language for
